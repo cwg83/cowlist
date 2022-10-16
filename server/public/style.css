@@ -1,0 +1,94 @@
+#cowlist-table {
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+  table-layout: fixed;
+  padding: 15px;
+}
+
+#cowlist-table td {
+  cursor: pointer;
+  padding: 5px;
+  color: gray;
+  position: relative;
+}
+
+.cow-name:hover {
+  color: black;
+}
+
+#current-cow-label {
+  width: 100%;
+  text-align: center;
+}
+
+#current-cow-container {
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+  padding: 15px;
+  display: table;
+  height: 100px;
+  border-collapse: collapse;
+}
+
+.current-cow-header {
+  font-weight: bold;
+  height: 25px;
+}
+
+.current-cow-row {
+  display: table-row;
+}
+
+.current-cow-column {
+  display: table-cell;
+  padding: 5px;
+  width: 33%;
+  vertical-align: top;
+}
+
+#current-cow-form {
+  display: table-row;
+}
+
+#current-cow-form input, textarea {
+  text-align: center;
+}
+
+#form-container {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#cow-name, #cow-description, #submit-cow {
+  margin: 5px;
+}
+
+.close {
+  top: 3px;
+  right: -55px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  right: 15px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}

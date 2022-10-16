@@ -3,8 +3,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
-  dialect: dbConfig.dialect,
-  operatorsAliases: false
+  dialect: dbConfig.dialect
 });
 
 sequelize.authenticate().then(() => {
@@ -14,25 +13,23 @@ sequelize.authenticate().then(() => {
 });
 
 const Cows = sequelize.define('cows', {
-  // Model attributes are defined here
   name: {
     type: DataTypes.STRING,
     allowNull: false
   },
   description: {
     type: DataTypes.STRING
-    // allowNull defaults to true
   }
-}, {
-  // Other model options go here
-});
+},
+  { timestamps: false }
+);
 
 sequelize.sync().then(() => {
   console.log('Cows has been established successfully.');
 }).catch((error) => {
-  console.error('Unable to connect to create table: ', error);
+  console.error('Unable to create table: ', error);
 });
 
 module.exports = {
-  db: Cows
+  Cows: Cows
 }
